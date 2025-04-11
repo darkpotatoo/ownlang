@@ -1,0 +1,9 @@
+## this is a comment!
+var a = 1823512351
+
+define(function) functionname
+	wait(2)
+	writeline(<a>)
+	end
+
+functionname()
