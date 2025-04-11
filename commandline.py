@@ -1,7 +1,4 @@
-import tkinter as tk
-
-input = ""
-
+import tkinter as tk; input = "";
 def updateInput(event):
 	current_line = text.get("end-1l linestart", "end-1l lineend")
 	global input
@@ -13,11 +10,9 @@ def updateInput(event):
 	text.insert(tk.END, "\n$ ")
 	text.see(tk.END)
 	return "break"
-
 def preventBackspace(event):
 	if text.index(tk.INSERT).split(".")[1] == "2":
 		return "break"
-
 root = tk.Tk()
 root.title("Thing.terminal")
 root.configure(bg="black")
@@ -27,13 +22,11 @@ text.insert(tk.END, "$ ")
 text.bind("<Return>", updateInput)
 text.bind("<BackSpace>", preventBackspace)
 text.focus()
-
 def outputLine(text_to_send=""):
 	text.insert(tk.END, "\n")
 	text.see(tk.END)
 	text.insert(tk.END, text_to_send)
 	text.see(tk.END)
-
 def handleInput(line):
 	if "help" in line:
 		if len(line.split(" ")) == 1:
@@ -52,17 +45,14 @@ def handleInput(line):
 			outputLine()
 			outputLine("build <file>")
 			outputLine("<file>: Script file name to check for errors")
-	try:
-		if line.split(" ")[0] == "run" and line.split(" ")[1]:
-			from parser import run
-			run(line.split(" ")[1])
-	except:
-		outputLine("Expected <file> argument")
+	if line.split(" ")[0] == "run" and line.split(" ")[1]:
+		from parser import run
+		run(line.split(" ")[1])
+
 	try:
 		if line.split(" ")[0] == "build" and line.split(" ")[1]:
 			from parser import run
 			run(line.split(" ")[1], False)
 	except:
 		outputLine("Expected <file> argument")
-
 root.mainloop()

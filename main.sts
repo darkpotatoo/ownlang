@@ -1,9 +1,34 @@
 ## this is a comment!
 var a = 1823512351
+var b = <a>-1
+var c = <a>-<b>
+var d = <c>*200
+var eya = <a>
+var f = ["a", "b"]
 
-define(function) functionname
-	wait(2)
+define(functionname)
+	wait(0.1)
 	writeline(<a>)
+	wait(0.1)
+	writeline(<b>)
+	wait(0.1)
+	writeline(<c>)
+	wait(0.1)
+	writeline(<d>)
+	if(<eya> != 1823512123483512)
+		writeline(<f>[0])
+		end
+	writeline(<c>)
+	end
+
+if(<a> == 1823512123483512)
+	writeline("aaa")
+	writeline("bbb")
+	end
+
+if(<eya> != 1823512123483512)
+	writeline(<d> - <c>)
+	writeline("dd")
 	end
 
 functionname()
